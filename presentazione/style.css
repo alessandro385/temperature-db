@@ -1,0 +1,431 @@
+/* Global Resets & Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* bg-neutral-darkest text-neutral-light font-sans antialiased from HTML */
+  /* Additional base styles if needed */
+}
+
+/* Fade-in animation styles */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px); /* Slightly more pronounced */
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Style for navbar shadow on scroll */
+.navbar-scrolled {
+    /* Effectively bg-neutral-darkest/90 to be more solid */
+    background-color: rgba(15, 23, 42, 0.9); 
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+}
+
+/* Style for active navigation link */
+.active-nav-link {
+    color: #f8fafc; /* slate-50 (neutral-lightest) */
+    font-weight: 600; /* font-semibold */
+}
+
+/* General utility classes */
+.nav-link {
+    color: #cbd5e1; /* slate-300 (neutral-light equivalent for dark theme) */
+    padding: 0.5rem 0.75rem; /* md:px-2 py-2 */
+    border-radius: 0.375rem; /* rounded-md */
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500; /* font-medium */
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden; /* For hover effect */
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #7c3aed; /* primary-light */
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::before, 
+.active-nav-link::before {
+    width: 70%; /* Active/hover underline width */
+}
+
+.nav-link:hover {
+    color: #f8fafc; /* slate-50 (neutral-lightest) */
+}
+
+.section-title {
+    font-size: 2rem; /* text-3xl */
+    line-height: 2.5rem;
+    font-weight: 700; /* font-bold */
+    color: #0f172a; /* text-neutral-darkest for light sections */
+    margin-bottom: 1.5rem; /* mb-6 */
+    letter-spacing: -0.025em; /* tracking-tight */
+}
+.section-title-light {
+    font-size: 2rem; /* text-3xl */
+    line-height: 2.5rem;
+    font-weight: 700; /* font-bold */
+    color: #f8fafc; /* text-neutral-lightest for dark sections */
+    margin-bottom: 1.5rem; /* mb-6 */
+    letter-spacing: -0.025em; /* tracking-tight */
+}
+
+@media (min-width: 768px) {
+    .section-title, .section-title-light {
+        font-size: 2.5rem; /* md:text-4xl (adjusted) */
+        line-height: 2.75rem;
+        margin-bottom: 2rem; /* md:mb-8 */
+    }
+}
+
+.section-subtitle {
+    font-size: 1.125rem; /* text-lg */
+    color: #334155; /* neutral-dark */
+    line-height: 1.75; /* leading-relaxed */
+    max-width: 48rem; /* max-w-3xl */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.5rem; /* mb-10 */
+}
+.section-subtitle-light {
+    font-size: 1.125rem; /* text-lg */
+    color: #cbd5e1; /* neutral-light (slate-300) */
+    line-height: 1.75; /* leading-relaxed */
+    max-width: 48rem; /* max-w-3xl */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.5rem; /* mb-10 */
+}
+
+@media (min-width: 768px) {
+    .section-subtitle, .section-subtitle-light {
+        font-size: 1.25rem; /* md:text-xl */
+        margin-bottom: 3rem; /* md:mb-12 */
+    }
+}
+
+.card-title {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 600; /* font-semibold */
+    margin-bottom: 0.75rem; /* mb-3 */
+}
+
+.card-content {
+    color: #374151; /* text-neutral-dark */
+    line-height: 1.625; /* leading-relaxed */
+}
+
+.card-content-sm {
+    font-size: 0.875rem; /* text-sm */
+    line-height: 1.25rem;
+    color: #6b7280; /* text-neutral-DEFAULT */
+    line-height: 1.625; /* leading-relaxed */
+}
+
+.problem-card {
+    background-color: #0f172a; /* neutral-darkest (slate-900) */
+    padding: 1.5rem; /* p-6 */
+    border-radius: 0.75rem; /* rounded-xl */
+    border: 1px solid #334155; /* neutral-dark (slate-700) */
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06), inset 0 1px 0 0 rgba(255, 255, 255, 0.03);
+    transition: all 0.3s ease-in-out;
+}
+.problem-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -5px rgba(0,0,0,0.2), 0 4px 8px -2px rgba(0,0,0,0.1), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+    border-color: #6d28d9; /* primary */
+}
+.problem-card .card-title {
+    color: #fca5a5; /* red-300 for visibility on dark */
+}
+.problem-card .card-content {
+    color: #cbd5e1; /* neutral-light (slate-300) */
+    font-size: 0.95rem;
+}
+
+.solution-card {
+    background-color: #1e293b; /* neutral-darker (slate-800) */
+    padding: 1.5rem; 
+    border-radius: 0.75rem; /* rounded-xl */
+    text-align: center;
+    border: 1px solid #334155; /* neutral-dark (slate-700) */
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    transition: all 0.3s ease-in-out;
+}
+.solution-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -5px rgba(0,0,0,0.2), 0 4px 8px -2px rgba(0,0,0,0.1);
+    border-color: #047857; /* secondary */
+}
+.solution-icon {
+    height: 3.5rem; /* h-14 */
+    width: 3.5rem; /* w-14 */
+    border-radius: 9999px; /* rounded-full */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem; /* mb-4 */
+    /* bg and text colors for icon itself are set in HTML via Tailwind (e.g., bg-secondary-light text-secondary-dark) */
+}
+.solution-card .card-title {
+    color: #a7f3d0; /* emerald-200 (secondary-light equivalent for readability) */
+}
+.solution-card .card-content-sm {
+    color: #94a3b8; /* slate-400 (neutral-light variant) */
+    font-size: 0.875rem;
+}
+
+.flow-step {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 1rem; /* space-x-4 */
+    padding: 1rem; /* p-4 */
+    border-radius: 0.5rem; /* rounded-lg */
+    transition: background-color 0.2s ease-in-out;
+}
+.flow-step:hover {
+    background-color: #f9fafb; /* hover:bg-neutral-lightest */
+}
+.flow-number {
+    flex-shrink: 0;
+    height: 2.5rem; /* h-10 */
+    width: 2.5rem; /* w-10 */
+    border-radius: 9999px; /* rounded-full */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 700; /* font-bold */
+    /* bg-primary and text-white are applied via Tailwind in HTML */
+}
+
+.flow-title {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+    color: #4338ca; /* text-primary-dark */
+    margin-bottom: 0.25rem; /* mb-1 */
+}
+.flow-description {
+    color: #374151; /* text-neutral-dark */
+    line-height: 1.625; /* leading-relaxed */
+}
+
+.feature-card {
+    padding: 1.5rem; /* p-6 */
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-lg */
+    border: 1px solid #e5e7eb; /* border border-neutral-light */
+    transition: box-shadow 0.3s ease-in-out;
+     background-color: #ffffff; /* Ensure bg-white if not set in HTML directly */
+}
+.feature-card:hover {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); /* hover:shadow-xl */
+}
+
+.tag-secondary {
+    display: inline-block;
+    background-color: #065f46; /* secondary-dark */
+    color: #a7f3d0; /* emerald-200 */
+    font-size: 0.875rem; font-weight: 500;
+    margin-right: 0.5rem; margin-bottom: 0.5rem;
+    padding: 0.375rem 0.875rem; /* Slightly more padding */
+    border-radius: 9999px;
+    border: 1px solid #047857; /* secondary */
+    transition: all 0.2s ease;
+}
+.tag-secondary:hover {
+    background-color: #047857; /* secondary */
+    color: #f8fafc; /* neutral-lightest */
+    transform: scale(1.05);
+}
+
+.tech-stack-group {
+    background-color: #f9fafb; /* bg-neutral-lightest */
+    padding: 1.5rem; /* p-6 */
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-md */
+}
+.tech-item {
+    color: #374151; /* text-neutral-dark */
+    line-height: 1.625; /* leading-relaxed */
+    padding-bottom: 0.25rem; /* pb-1 */
+}
+
+/* Roadmap Table (on dark section) */
+.table-header {
+    padding: 0.75rem 1.5rem;
+    text-align: left;
+    font-size: 0.75rem; font-weight: 600; /* Adjusted from bold */
+    color: #94a3b8; /* neutral-DEFAULT variant (slate-400) */
+    text-transform: uppercase;
+    letter-spacing: 0.075em;
+}
+.table-cell {
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.625;
+}
+/* Colors for table cells are set in HTML using text-primary-light, text-secondary-light */
+
+/* Budget Cards (on dark section) */
+.budget-card-dark { 
+    background-color: #0f172a; /* neutral-darkest (slate-900) */
+    padding: 1.5rem;
+    border-radius: 0.75rem; /* rounded-xl */
+    border-left-width: 4px; /* border-l-4 set in HTML with primary/secondary */
+    border-top: 1px solid #334155; /* neutral-dark */
+    border-right: 1px solid #334155;
+    border-bottom: 1px solid #334155;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.03);
+    transition: all 0.3s ease-in-out;
+}
+.budget-card-dark:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+    border-color: inherit; /* Keep original border color from HTML */
+}
+.budget-card-dark .card-title { 
+    /* Color from HTML (primary-light or secondary-light) */
+    /* Flex properties added in HTML */
+    margin-bottom: 0.5rem; /* Reduced margin */
+}
+.budget-percentage {
+    font-size: 0.75rem; /* text-xs */
+    font-weight: 700; /* font-bold */
+    padding: 0.25rem 0.6rem; /* py-1 px-2.5 */
+    border-radius: 9999px; /* rounded-full */
+    /* Background and text color set in HTML */
+}
+.budget-card-dark .card-content-light { 
+    color: #cbd5e1; /* neutral-light (slate-300) */ 
+    font-size: 0.875rem; /* text-sm */
+    line-height: 1.6;
+}
+.budget-card-dark ul { 
+    /* Styles for the main list */
+     margin-top: 0.75rem;
+}
+.budget-card-dark ul ul { 
+    /* Styles for the nested list */
+    margin-top: 0.25rem;
+    color: #94a3b8; /* neutral-DEFAULT variant (slate-400) */
+}
+
+/* Team Card (on dark section) */
+.team-card-dark {
+    background-color: #0f172a; /* neutral-darkest (slate-900) */
+    padding: 1.5rem;
+    border-radius: 0.75rem; /* rounded-xl */
+    border-left-width: 4px; /* border-l-4 set in HTML with primary/secondary */
+    border-top: 1px solid #334155; /* neutral-dark */
+    border-right: 1px solid #334155;
+    border-bottom: 1px solid #334155;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.03);
+    transition: all 0.3s ease-in-out;
+}
+.team-card-dark:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+    border-color: inherit; /* Keep original border color from HTML */
+}
+.team-card-dark .card-title {
+    margin-bottom: 0.5rem; /* Reduced margin */
+}
+.team-card-dark .card-content-light {
+    color: #cbd5e1; /* neutral-light (slate-300) */
+    font-size: 0.875rem; /* text-sm */
+    line-height: 1.6;
+}
+.team-card-dark ul {
+    margin-top: 0.75rem;
+}
+.team-card-dark ul ul {
+    margin-top: 0.25rem;
+    color: #94a3b8; /* neutral-DEFAULT variant (slate-400) */
+}
+
+.feature-card-dark .card-content-light { color: #cbd5e1; /* neutral-light (slate-300) */ }
+
+/* Compliance Section Columns */
+.compliance-column {
+    /* bg-neutral-darkest, p-6, rounded-lg, shadow-lg, border-l-4 set in HTML */
+    /* Add a subtle inner shadow for depth */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.compliance-column:hover {
+     transform: translateY(-4px);
+     box-shadow: 0 12px 24px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255, 255, 255, 0.07);
+}
+
+.compliance-column .card-title {
+    /* Color set by text-primary-light or text-secondary-light in HTML */
+    /* Flex properties in HTML */
+    font-size: 1.15rem; /* Slightly smaller title */
+    border-bottom: 1px solid #334155; /* neutral-dark */
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem; /* Increased margin after title */
+}
+
+.compliance-column .card-content-light { 
+    color: #cbd5e1; /* neutral-light (slate-300) */ 
+    font-size: 0.875rem; /* text-sm */
+    line-height: 1.6;
+}
+
+.compliance-list {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+}
+
+.compliance-list > li {
+    position: relative;
+    padding-left: 1.5rem; /* Space for custom marker */
+    margin-bottom: 0.6rem; /* space-y-2.5 approx */
+}
+
+.compliance-list > li::before {
+    content: '\2714'; /* Checkmark unicode character */
+    position: absolute;
+    left: 0;
+    top: 1px;
+    font-size: 0.9rem;
+    /* Color based on parent column's border color */
+    color: inherit; 
+}
+
+/* Specific marker colors based on column border */
+.compliance-column.border-primary .compliance-list > li::before {
+    color: #7c3aed; /* primary-light */
+}
+.compliance-column.border-secondary .compliance-list > li::before {
+    color: #059669; /* secondary-light */
+}
+
+
+.compliance-sublist {
+    list-style: disc; /* Use standard disc for sublist */
+    padding-left: 1.25rem; /* Standard indentation */
+    margin-top: 0.5rem;
+}
+
+.compliance-sublist > li {
+     margin-bottom: 0.25rem; /* space-y-1 */
+     color: #94a3b8; /* slate-400 for sublist items */
+} 

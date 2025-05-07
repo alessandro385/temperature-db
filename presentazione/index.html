@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AnticipoStipendio - Pitch Deck Interattivo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Link to custom CSS for animations -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Add Google Fonts if desired -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              light: '#7c3aed', // purple-600
+              DEFAULT: '#6d28d9', // purple-700
+              dark: '#5b21b6',  // purple-800
+              darker: '#4c1d95' // purple-900
+            },
+            secondary: {
+              light: '#059669', // emerald-600 
+              DEFAULT: '#047857', // emerald-700
+              dark: '#065f46' // emerald-800
+            },
+            accent: {
+              light: '#f59e0b', // amber-500
+              DEFAULT: '#d97706', // amber-600
+              dark: '#b45309'  // amber-700
+            },
+            neutral: {
+              lightest: '#f8fafc', // slate-50
+              lighter: '#f1f5f9', // slate-100
+              light: '#e2e8f0',   // slate-200
+              DEFAULT: '#64748b', // slate-500
+              dark: '#334155',    // slate-700
+              darker: '#1e293b',  // slate-800
+              darkest: '#0f172a'  // slate-900
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Inline script removed, functionality moved to script.js -->
+</head>
+<body class="bg-neutral-darkest text-neutral-light font-sans antialiased">
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-neutral-darkest/70 backdrop-blur-lg z-50 transition-all duration-300 shadow-lg" id="main-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 md:h-20">
+        <div class="flex-shrink-0 flex items-center">
+          <span class="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-light to-secondary-light">AnticipoStipendio</span>
+        </div>
+        <div class="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-1 md:space-x-2">
+          <a href="#intro" class="nav-link">Intro</a>
+          <a href="#problema" class="nav-link">Problema</a>
+          <a href="#soluzione" class="nav-link">Soluzione</a>
+          <a href="#funziona" class="nav-link">Funziona</a>
+          <a href="#modello" class="nav-link">Business</a>
+          <a href="#regolamentazione" class="nav-link">Compliance</a>
+          <a href="#tecnologia" class="nav-link">Tecnologia</a>
+          <a href="#roadmap" class="nav-link">Roadmap</a>
+          <a href="#budget" class="nav-link">Budget</a>
+          <a href="#team" class="nav-link">Team</a>
+          <a href="#contatti" class="nav-linkพิเศษ">Contattaci</a>
+        </div>
+        <!-- Mobile menu button placeholder -->
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-32 md:pt-40 pb-24 md:pb-32 bg-neutral-darkest text-center relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+        <!-- Subtle pattern or shapes can go here, e.g., a very faint grid or geometric pattern -->
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="heroPattern" patternUnits="userSpaceOnUse" width="40" height="40" patternTransform="scale(2) rotate(45)"><rect x="0" y="0" width="100%" height="100%" fill="none"/><path d="M-10 10l20 0M0 0l0 20" stroke-width="0.5" stroke="rgba(255,255,255,0.1)" shape-rendering="crispEdges"/></pattern></defs><rect width="100%" height="100%" fill="url(#heroPattern)"/></svg>
+    </div>
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight ">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary-light via-purple-400 to-secondary">AnticipoStipendio:</span> 
+        <span class="block mt-2 md:mt-0 md:inline">Liquidità Immediata, Zero Stress.</span>
+      </h1>
+      <p class="text-lg sm:text-xl md:text-2xl mb-10 text-neutral-light max-w-3xl mx-auto">
+        Accedi al tuo stipendio quando serve, fino a 200€, con un processo 100% digitale, sicuro e senza coinvolgere la tua azienda.
+      </p>
+      <a href="#contatti" 
+         class="cta-button">
+        Richiedi il Business Plan
+      </a>
+    </div>
+  </section>
+
+  <!-- Main Content Sections Wrapper -->
+  <div class="space-y-20 md:space-y-28">
+
+    <!-- 1. Executive Summary (Potenziata) -->
+    <section id="intro" class="py-16 md:py-20 scroll-mt-28">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="section-title-light"><span class="text-primary">AnticipoStipendio:</span> La Tua Liquidità, Immediata.</h2>
+        <p class="section-subtitle-light md:text-xl">
+          Per milioni di lavoratori italiani, il fine mese può significare stress finanziario. 
+          <strong class="text-neutral-lightest">AnticipoStipendio è la soluzione fintech che offre anticipi istantanei sullo stipendio (fino a 200€) in modo <span class="text-secondary font-semibold">veloce, trasparente e totalmente automatizzato</span>, senza intermediari o il coinvolgimento del datore di lavoro.</strong>
+          Con una commissione etica dell'1% e un'esperienza utente impeccabile, ci posizioniamo per ridefinire l'accesso alla liquidità personale.
+        </p>
+        <div class="mt-10">
+            <a href="#soluzione" 
+               class="inline-block bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg font-semibold text-lg transform hover:scale-105 transition-all duration-300 ease-in-out shadow-lg">
+                Come Rivoluzioniamo il Credito <span aria-hidden="true">→</span>
+            </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Il Problema -->
+    <section id="problema" class="py-16 md:py-20 scroll-mt-28 section-dark-bg">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="section-title-light text-center">🔍 Il Problema: Un Gap Critico nel Mercato</h2>
+        <p class="section-subtitle-light text-center mb-12">
+            Nonostante un impiego, molti si scontrano con l'imprevisto o il disallineamento entrate/uscite. Le alternative attuali sono spesso inadeguate:
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div class="problem-card">
+            <h3 class="card-title text-red-600">Prestiti Bancari</h3>
+            <p class="card-content">Processi lenti, eccessiva burocrazia, spesso inaccessibili per importi ridotti e necessità immediate.</p>
+          </div>
+          <div class="problem-card">
+            <h3 class="card-title text-red-600">Finanziamenti Personali</h3>
+            <p class="card-content">Costi elevati, tassi di interesse poco convenienti e procedure invasive per la privacy.</p>
+          </div>
+          <div class="problem-card">
+            <h3 class="card-title text-red-600">Anticipi Aziendali</h3>
+            <p class="card-content">Opzione raramente disponibile, può creare imbarazzo e richiede l'intervento diretto del datore di lavoro.</p>
+          </div>
+        </div>
+        <p class="text-xl text-neutral-lightest font-medium text-center mt-12">
+            Esiste un <strong class="text-primary">vuoto evidente</strong>: manca una soluzione di credito <strong class="text-primary">immediata, leggera e realmente accessibile</strong> a tutti i lavoratori.
+        </p>
+      </div>
+    </section>
+
+    <!-- 3. La Soluzione -->
+    <section id="soluzione" class="py-16 md:py-20 scroll-mt-28 section-light-bg">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="section-title-light text-center">💡 La Soluzione: Digitale, Veloce, Equa</h2>
+        <p class="section-subtitle text-center mb-12">
+            AnticipoStipendio offre un'esperienza utente superiore e benefici tangibili:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div class="solution-card">
+            <div class="solution-icon bg-secondary-light text-secondary-dark"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg></div>
+            <h3 class="card-title">Registrazione Veloce</h3>
+            <p class="card-content-sm">Onboarding in pochi minuti, 100% digitale.</p>
+          </div>
+          <div class="solution-card">
+            <div class="solution-icon bg-secondary-light text-secondary-dark"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+            <h3 class="card-title">Verifica Automatica</h3>
+            <p class="card-content-sm">AI per busta paga & Open Banking. Nessun disturbo all'azienda.</p>
+          </div>
+          <div class="solution-card">
+            <div class="solution-icon bg-secondary-light text-secondary-dark"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>
+            <h3 class="card-title">Erogazione Istantanea</h3>
+            <p class="card-content-sm">Fino a <strong class="font-bold">200€</strong> direttamente sul tuo conto, subito.</p>
+          </div>
+          <div class="solution-card">
+            <div class="solution-icon bg-secondary-light text-secondary-dark"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg></div>
+            <h3 class="card-title">Rimborso Flessibile</h3>
+            <p class="card-content-sm">Unica soluzione o 3 rate, addebito automatico.</p>
+          </div>
+        </div>
+         <p class="text-xl text-neutral-dark font-medium text-center mt-12">
+            Massima <strong class="text-secondary">discrezione</strong>, <strong class="text-secondary">zero garanzie</strong> richieste, esperienza <strong class="text-secondary">totalmente digitale</strong>.
+        </p>
+      </div>
+  </section>
+
+    <!-- 4. Come Funziona -->
+    <section id="funziona" class="py-16 md:py-20 scroll-mt-28 section-dark-bg">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="section-title-light text-center">⚙️ Flusso Utente: Semplicità Assoluta</h2>
+        <div class="mt-12 space-y-8">
+          <div class="flow-step-dark">
+            <div class="flow-number bg-primary text-neutral-lightest">1</div>
+            <div class="flow-content">
+              <h3 class="flow-title-light">Download e Registrazione Rapida</h3>
+              <p class="flow-description-light">L'utente scarica l'app (iOS/Android), si registra in pochi passaggi e completa un veloce processo di verifica identità (KYC).</p>
+            </div>
+          </div>
+          <div class="flow-step-dark">
+            <div class="flow-number bg-primary text-neutral-lightest">2</div>
+            <div class="flow-content">
+              <h3 class="flow-title-light">Collegamento Sicuro del Conto</h3>
+              <p class="flow-description-light">Tramite Open Banking, l'utente collega il conto bancario in sicurezza, autorizzando la visualizzazione dei movimenti.</p>
+            </div>
+          </div>
+          <div class="flow-step-dark">
+            <div class="flow-number bg-primary text-neutral-lightest">3</div>
+            <div class="flow-content">
+              <h3 class="flow-title-light">Caricamento Busta Paga</h3>
+              <p class="flow-description-light">Viene richiesta l'ultima busta paga (PDF o immagine), che il nostro sistema AI analizzerà automaticamente.</p>
+            </div>
+          </div>
+          <div class="flow-step-dark">
+            <div class="flow-number bg-primary text-neutral-lightest">4</div>
+            <div class="flow-content">
+              <h3 class="flow-title-light">Analisi AI e Autorizzazione</h3>
+              <p class="flow-description-light">L'AI estrae dati (datore, netto, frequenza accredito), li incrocia con i dati bancari, valuta l'idoneità e definisce il massimale (fino a 200€).</p>
+            </div>
+          </div>
+          <div class="flow-step-dark">
+            <div class="flow-number bg-primary text-neutral-lightest">5</div>
+            <div class="flow-content">
+              <h3 class="flow-title-light">Accettazione ed Erogazione Immediata</h3>
+              <p class="flow-description-light">L'utente sceglie l'importo, visualizza la commissione dell'1%, accetta termini e condizioni. Il denaro è accreditato sul conto in pochi istanti.</p>
+            </div>
+          </div>
+           <div class="flow-step-dark">
+            <div class="flow-number bg-primary text-neutral-lightest">6</div>
+            <div class="flow-content">
+              <h3 class="flow-title-light">Rimborso Automatizzato</h3>
+              <p class="flow-description-light">Alla scadenza, il rimborso (capitale + commissione) avviene con addebito automatico (Open Banking o SDD).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+    <!-- 5. Business Model -->
+    <section id="modello" class="py-16 md:py-20 scroll-mt-28 section-light-bg">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="section-title-light text-center">💰 Business Model: Trasparenza e Scalabilità</h2>
+        <p class="section-subtitle text-center mb-12">
+            Un modello etico, efficiente e con forte potenziale di crescita.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div class="feature-card-light lg:col-span-1">
+            <h3 class="card-title text-primary">Commissione Chiara</h3>
+            <p class="card-content-dark">Una <strong class="font-semibold">commissione fissa e trasparente dell'1%</strong> su ogni anticipo erogato (es. 2€ su 200€). Nessun costo nascosto.</p>
+          </div>
+          <div class="feature-card-light lg:col-span-1">
+            <h3 class="card-title text-primary">Mora su Ritardi (Risk Mitigation)</h3>
+            <p class="card-content-dark">In caso di ritardo nel rimborso, verrà applicata una <strong class="font-semibold">mora fissa giornaliera dell'1,5%</strong> sull'importo dovuto, che matura nel tempo. Questa misura incentiva la puntualità e copre i costi aggiuntivi di gestione.</p>
+          </div>
+          <div class="feature-card-light lg:col-span-1">
+            <h3 class="card-title text-primary">Gestione Rischio Calcolata</h3>
+            <p class="card-content-dark">Rischio mitigato da: importi contenuti (max 200€), accurata <strong class="font-semibold">verifica automatica</strong> dell'impiego e analisi dello storico creditizio tramite Open Banking.</p>
+          </div>
+        </div>
+        <div class="text-center">
+            <h3 class="text-2xl font-semibold text-neutral-darker mb-6">Visione a Lungo Termine: Estensioni Future</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="tag-secondary">Programmi Fedeltà & Referral</span>
+                <span class="tag-secondary">Micro-Prodotti Assicurativi</span>
+                <span class="tag-secondary">Piani Risparmio Integrati</span>
+                <span class="tag-secondary">Funzionalità Premium</span>
+                <span class="tag-secondary">Educazione Finanziaria</span>
+            </div>
+        </div>
+      </div>
+  </section>
+
+    <!-- NUOVA SEZIONE: Strategia Regolamentare e Compliance -->
+    <section id="regolamentazione" class="py-16 md:py-20 scroll-mt-28 section-dark-bg">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title-light text-center">📜 Strategia Regolamentare e Compliance</h2>
+            <p class="section-subtitle-light text-center mb-12">
+                Affrontiamo il complesso panorama normativo italiano con una strategia chiara per garantire piena conformità e operatività.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 mb-12">
+                <!-- Colonna Autorizzazione Art. 106 -->
+                <div class="compliance-column bg-neutral-darkest border-l-4 border-primary p-6 rounded-lg shadow-lg">
+                    <h3 class="card-title text-primary-light mb-4 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg> <!-- Icona Bilancia/Legge -->
+                        <span>Autorizzazione Intermediario (Art. 106 TUB)</span>
+                    </h3>
+                    <p class="card-content-light mb-4 text-sm">Ottenere l'autorizzazione Banca d'Italia è un passo cruciale con requisiti stringenti:</p>
+                    <ul class="compliance-list space-y-2.5 text-sm text-neutral-light">
+                        <li><strong>Forma Giuridica:</strong> Costituzione come <strong class="font-semibold">Società per Azioni (S.p.A.)</strong>.</li>
+                        <li><strong>Sede e Direzione:</strong> Sede legale e direzione generale <strong class="font-semibold">situate in Italia</strong>.</li>
+                        <li><strong>Capitale Sociale Minimo:</strong> <strong class="font-semibold">2 milioni di euro</strong> interamente versati (come da budget), non rilasciando garanzie.</li>
+                        <li><strong>Requisiti Soggettivi:</strong> Esponenti aziendali e partecipanti al capitale con requisiti di onorabilità, professionalità e indipendenza.</li>
+                        <li><strong>Oggetto Sociale:</strong> Limitato alle attività finanziarie consentite e strumentali.</li>
+                        <li><strong>Programma di Attività:</strong> Presentazione di un piano dettagliato con solida organizzazione aziendale e sistemi di controllo interno.</li>
+                        <li><strong>Trasparenza per Vigilanza:</strong> Assenza di legami che ostacolino l'effettiva vigilanza da parte della Banca d'Italia.</li>
+                    </ul>
+                </div>
+
+                <!-- Colonna Strategia <=200€ -->
+                <div class="compliance-column bg-neutral-darkest border-l-4 border-secondary p-6 rounded-lg shadow-lg">
+                    <h3 class="card-title text-secondary-light mb-4 flex items-center">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg> <!-- Icona Strategia/Settings -->
+                        <span>Strategia Prestiti ≤200€ (Fase Iniziale)</span>
+                    </h3>
+                    <p class="card-content-light mb-4 text-sm">Partire con anticipi <strong class="font-semibold text-neutral-lightest">≤200€</strong> ottimizza l'avvio riducendo la complessità normativa:</p>
+                    <ul class="compliance-list space-y-2.5 text-sm text-neutral-light mb-4">
+                        <li><strong class="font-semibold">Esclusione dalla disciplina del Credito ai Consumatori</strong> (TUB, Art. 121 ss.).</li>
+                        <li>Minori obblighi informativi (es. no IEBCC/SECCI).</li>
+                        <li>Semplificazione nella valutazione del merito creditizio (pur mantenendo criteri di prudenza).</li>
+                        <li>Inapplicabilità di regole specifiche sul TAEG consumer e sul diritto di recesso di 14gg.</li>
+                    </ul>
+                    <p class="text-xs text-neutral-DEFAULT mb-2 font-semibold">Rispetto Normative Applicabili:</p>
+                    <ul class="compliance-sublist list-inside space-y-1 text-xs text-neutral-DEFAULT">
+                        <li>Norme generali del Codice Civile sui contratti.</li>
+                        <li>Principi di trasparenza bancaria e correttezza.</li>
+                        <li>Leggi anti-usura (monitoraggio costante dei tassi).</li>
+                        <li>Obblighi antiriciclaggio (adeguata verifica della clientela).</li>
+                        <li>Codice del Consumo (tutela generale del consumatore).</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center text-neutral-light text-md">
+                Questa duplice strategia ci permette di avviare l'attività in modo più agile, pur costruendo le fondamenta per una piena operatività come intermediario finanziario vigilato.
+            </p>
+        </div>
+  </section>
+
+    <!-- 6. Architettura e Tecnologia -->
+    <section id="tecnologia" class="py-16 md:py-20 scroll-mt-28 section-light-bg">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title-light text-center">🧱 Stack Tecnologico Moderno e Sicuro</h2>
+            <p class="section-subtitle text-center mb-12">
+                Adottiamo tecnologie all'avanguardia per garantire performance, scalabilità e massima sicurezza.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+                <div class="tech-stack-group-light">
+                    <h3 class="text-xl font-semibold text-primary mb-4">Componenti Chiave dell'Applicazione:</h3>
+                    <ul class="space-y-3">
+                        <li class="tech-item-dark"><strong>Frontend:</strong> App mobile (React Native preferito per cross-platform, o Nativa Swift/Kotlin) con UX design focalizzato sulla semplicità.</li>
+                        <li class="tech-item-dark"><strong>Backend:</strong> API robuste e scalabili (Node.js/TypeScript con Express/Fastify, o Python/FastAPI) su infrastruttura serverless o containerizzata (AWS Lambda, Docker/Kubernetes).</li>
+                        <li class="tech-item-dark"><strong>AI/OCR:</strong> Modulo di Intelligenza Artificiale per estrazione dati da buste paga (Google Vision AI, AWS Textract, o modelli custom fine-tuned).</li>
+                        <li class="tech-item-dark"><strong>Open Banking:</strong> Integrazione con provider certificati (TrueLayer, Plaid, Salt Edge, Fabrick) per accesso sicuro ai dati bancari PSD2.</li>
+                        <li class="tech-item-dark"><strong>KYC/AML:</strong> Servizi esterni specializzati (Onfido, Sumsub, Stripe Identity) per verifica dell'identità e antiriciclaggio.</li>
+                         <li class="tech-item-dark"><strong>Database:</strong> DBMS scalabili e sicuri (PostgreSQL, MongoDB Atlas) con strategie di backup e disaster recovery.</li>
+                    </ul>
+                </div>
+                <div class="tech-stack-group-light">
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Sicurezza e Compliance by Design:</h3>
+                    <ul class="space-y-3">
+                        <li class="tech-item-dark">Crittografia end-to-end dei dati sensibili (AES-256) sia in transito (TLS 1.3) che a riposo.</li>
+                        <li class="tech-item-dark">Autenticazione multi-fattore (MFA) e gestione sicura delle sessioni utente.</li>
+                        <li class="tech-item-dark">Architettura cloud sicura (AWS/GCP/Azure) con best practice (VPC, IAM, WAF, IDS/IPS).</li>
+                        <li class="tech-item-dark">Piena aderenza alle normative GDPR e PSD2, con DPO dedicato.</li>
+                        <li class="tech-item-dark">Audit di sicurezza periodici (interni ed esterni) e penetration test.</li>
+                        <li class="tech-item-dark">Monitoraggio continuo e alerting per attività sospette e vulnerabilità.</li>
+    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Roadmap -->
+    <section id="roadmap" class="py-16 md:py-20 scroll-mt-28 section-dark-bg">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="section-title-light text-center">📈 Roadmap Strategica: Fasi e Obiettivi</h2>
+        <p class="section-subtitle-light text-center mb-12">
+            Un piano di sviluppo chiaro e progressivo per portare AnticipoStipendio al successo.
+        </p>
+        <div class="overflow-x-auto shadow-2xl rounded-lg">
+          <table class="min-w-full divide-y divide-neutral-darker bg-neutral-darkest">
+            <thead class="bg-neutral-darker">
+              <tr>
+                <th class="table-header">Fase</th>
+                <th class="table-header">Obiettivo Primario</th>
+                <th class="table-header text-center">Tempistica Prevista</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-neutral-darker text-neutral-light">
+              <tr class="hover:bg-neutral-darker transition-colors duration-200">
+                <td class="table-cell font-semibold text-primary-light">Fase 1: MVP & Validazione</td>
+                <td class="table-cell">Sviluppo MVP completo (interno), test approfonditi delle integrazioni chiave (KYC, Open Banking, AI). Validazione tecnica.</td>
+                <td class="table-cell text-center font-medium text-secondary-light">Q2 2025</td>
+              </tr>
+              <tr class="hover:bg-neutral-darker transition-colors duration-200">
+                <td class="table-cell font-semibold text-primary-light">Fase 2: Closed Beta & Feedback</td>
+                <td class="table-cell">Lancio test closed beta con utenti selezionati. Raccolta feedback qualitativi e quantitativi. Iterazione rapida del prodotto.</td>
+                <td class="table-cell text-center font-medium text-secondary-light">Q3 2025</td>
+              </tr>
+              <tr class="hover:bg-neutral-darker transition-colors duration-200">
+                <td class="table-cell font-semibold text-primary-light">Fase 3: Lancio Pubblico Iniziale</td>
+                <td class="table-cell">Rilascio ufficiale su App Store e Play Store. Campagna di marketing di lancio mirata (digital, influencer). Acquisizione primi utenti.</td>
+                <td class="table-cell text-center font-medium text-secondary-light">Q4 2025</td>
+              </tr>
+              <tr class="hover:bg-neutral-darker transition-colors duration-200">
+                <td class="table-cell font-semibold text-primary-light">Fase 4: Crescita e Ottimizzazione</td>
+                <td class="table-cell">Monitoraggio intensivo dei KPI (attivazione, utilizzo, retention, CAC). Ottimizzazione funnel di conversione e processi operativi.</td>
+                <td class="table-cell text-center font-medium text-secondary-light">Q1 2026</td>
+              </tr>
+              <tr class="hover:bg-neutral-darker transition-colors duration-200">
+                <td class="table-cell font-semibold text-primary-light">Fase 5: Espansione Servizi</td>
+                <td class="table-cell">Introduzione di nuove funzionalità (es. rateizzazione più flessibile, limiti di anticipo maggiori). Valutazione e sviluppo nuovi prodotti fintech correlati.</td>
+                <td class="table-cell text-center font-medium text-secondary-light">da Q2 2026</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </section>
+
+    <!-- 8. Budget e Richiesta Finanziaria (AGGIORNATO & RISTILIZZATO) -->
+    <section id="budget" class="py-16 md:py-20 scroll-mt-28 section-dark-bg">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title-light text-center">📊 Investimento Strategico: Allocazione Fondi</h2>
+            <p class="section-subtitle-light text-center mb-12">
+                Richiediamo un investimento di <strong class="text-primary-light text-2xl">3 milioni di euro</strong> per lanciare, ottenere l'autorizzazione come intermediario finanziario e sostenere la crescita iniziale (12-18 mesi).
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+                <div class="budget-card-dark border-primary">
+                    <h3 class="card-title text-primary-light flex justify-between items-baseline">
+                        <span>Capitale Sociale Minimo</span> 
+                        <span class="budget-percentage bg-primary/20 text-primary-light">66.7%</span>
+                    </h3>
+                    <p class="text-lg font-semibold text-neutral-lightest mb-3">2.000.000 €</p>
+                    <p class="card-content-light text-sm">
+                        Capitale iniziale versato, <strong class="font-medium text-neutral-lightest">richiesto dalla Banca d'Italia</strong> per l'autorizzazione ex art. 106 TUB (senza rilascio garanzie). Garantisce stabilità, non usato per erogazione diretta.
+                    </p>
+                </div>
+                <div class="budget-card-dark border-secondary">
+                     <h3 class="card-title text-secondary-light flex justify-between items-baseline">
+                        <span>Fondo Operativo & Costi Avvio</span>
+                        <span class="budget-percentage bg-secondary/20 text-secondary-light">33.3%</span>
+                    </h3>
+                    <p class="text-lg font-semibold text-neutral-lightest mb-3">1.000.000 €</p>
+                    <p class="card-content-light mb-3 text-sm">Per finanziare l'operatività e le spese iniziali (primi 12-18 mesi):</p>
+                    <ul class="list-disc list-inside space-y-1 text-neutral-light text-sm">
+                        <li><strong>Fondo Erogazione Anticipi (EWA):</strong> ~800.000 €</li>
+                        <li><strong>Costi Avvio & Operativi:</strong> ~200.000 €
+                            <ul class="list-disc list-inside ml-4 text-xs text-neutral-DEFAULT">
+                                <li>Piattaforma Tecnologica (Sviluppo, Manutenzione)</li>
+                                <li>Autorizzazione Banca d'Italia (Legale, Consulenze)</li>
+                                <li>Marketing & Acquisizione Clienti</li>
+                                <li>Personale Chiave (Assunzione, Formazione)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-lg text-neutral-dark text-center mt-12 leading-relaxed">
+                Questa allocazione strategica è essenziale per <strong class="font-semibold">ottenere l'autorizzazione normativa</strong>, lanciare il prodotto con una solida base finanziaria, raggiungere i primi traguardi di utenti attivi e <strong class="font-semibold">validare il modello di business</strong> sul mercato italiano, creando le premesse per una crescita sostenibile.
+            </p>
+        </div>
+  </section>
+
+    <!-- 9. Team -->
+    <section id="team" class="py-16 md:py-20 scroll-mt-28 section-dark-bg">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="section-title-light text-center">👥 Il Team: Visione, Strategia e Crescita</h2>
+        <div class="team-card-dark mt-10">
+            <p class="text-lg text-neutral-light leading-relaxed mb-4">
+                Il progetto è guidato da <strong class="text-primary">Barresi Alessandro</strong>, ideatore del concept "AnticipoStipendio". La sua visione chiara del prodotto e la profonda comprensione delle esigenze del target sono il motore principale dello sviluppo. Sebbene le competenze di sviluppo core verranno consolidate progressivamente, l'attuale focus è sulla definizione strategica del prodotto, sull'architettura della soluzione e sul coordinamento delle risorse tecniche necessarie, avvalendosi anche di supporto consulenziale avanzato per le fasi di implementazione più complesse.
+            </p>
+            <p class="text-lg text-neutral-light leading-relaxed">
+                La strategia operativa iniziale prevede un approccio agile, con un <strong class="font-semibold">nucleo interno focalizzato sulla product ownership e sulla roadmap strategica</strong>. Per le componenti altamente specializzate e regolamentate (come la compliance normativa avanzata, gli aspetti legali specifici dell'Art. 106 TUB, e le integrazioni KYC/AML di secondo livello) ci affideremo a <strong class="font-semibold">partnership strategiche con società leader e consulenti esterni</strong> con comprovata esperienza nel settore fintech e nei processi autorizzativi con Banca d'Italia. Siamo inoltre attivamente alla ricerca di advisor strategici per arricchire ulteriormente la nostra visione e accelerare la crescita.
+            </p>
+            <p class="text-lg text-neutral-light leading-relaxed mt-4">
+                L'obiettivo è costruire un team dedicato e performante man mano che il progetto cresce e ottiene finanziamenti, integrando progressivamente le competenze chiave necessarie per lo sviluppo, il marketing e le operation.
+            </p>
+        </div>
+      </div>
+  </section>
+
+    <!-- 10. Contatti e Call to Action -->
+    <section id="contatti" class="py-20 md:py-28 scroll-mt-28 bg-gradient-to-br from-neutral-darkest via-neutral-darker to-primary-darker text-neutral-lightest text-center">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Pronti a Innovare l'Accesso alla Liquidità?</h2>
+        <p class="text-xl text-neutral-light mb-10 leading-relaxed">
+            Condividiamo la nostra visione su come AnticipoStipendio genererà valore. Contattateci per il business plan completo, proiezioni finanziarie e accesso alla beta.
+        </p>
+        <div class="space-y-4 mb-10">
+             <p class="text-xl font-semibold">Email: <a href="mailto:tuamail@example.com" class="text-secondary hover:text-secondary-light underline transition-colors duration-200">tuamail@example.com</a></p>
+             <p class="text-lg text-neutral-DEFAULT">Pitch Deck Completo: <strong class="text-neutral-lightest">Disponibile su Richiesta Specifica</strong></p>
+        </div>
+        <a href="mailto:tuamail@example.com?subject=Richiesta%20Informazioni%20Progetto%20AnticipoStipendio&body=Gentile%20Team%20AnticipoStipendio,%0D%0A%0D%0ASarei%20interessato/a%20a%20ricevere%20maggiori%20informazioni%20riguardo%20il%20vostro%20progetto.%0D%0A%0D%0AGrazie,%0D%0A[Il Tuo Nome]"
+           class="cta-button-secondary">
+            Contattaci Ora
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <footer class="text-center py-12 mt-16 md:mt-24 text-sm text-neutral-DEFAULT border-t border-neutral-darker">
+    © 2025 AnticipoStipendio. Un progetto fintech per la gestione innovativa della liquidità personale. Tutti i diritti riservati.
+    <p class="mt-2 text-xs">Le informazioni finanziarie presentate sono stime preliminari.</p>
+  </footer>
+
+  <!-- Link to script.js at the end -->
+  <script src="script.js"></script>
+</body>
+</html>
