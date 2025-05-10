@@ -102,4 +102,38 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener('load', setActiveLinkOnLoad);
   window.addEventListener('scroll', setActiveLinkOnLoad); // Re-evaluate on scroll for robustness
 
+  // Contact Options Toggle
+  const contactTriggerButton = document.getElementById('contact-trigger-button');
+  const contactOptions = document.getElementById('contact-options');
+
+  if (contactTriggerButton && contactOptions) {
+    // Verifica iniziale: se l'elemento ha 'hidden' ma è visibile, forzalo a 'display: none'.
+    // Questo può aiutare se la classe 'hidden' di Tailwind ha conflitti.
+    if (contactOptions.classList.contains('hidden')) {
+      if (window.getComputedStyle(contactOptions).display !== 'none') {
+        console.warn("#contact-options ha la classe 'hidden' ma non è display:none. Forzo display:none via JS.");
+        contactOptions.style.display = 'none';
+      }
+    } else {
+      // Se NON ha la classe 'hidden' all'inizio e vuoi che sia nascosto, aggiungila e imposta display:none.
+      // Ma l'HTML attuale dovrebbe avere 'hidden', quindi questo blocco 'else' è per scenari imprevisti.
+      // Per il caso corrente (pulsanti sempre visibili), il blocco 'if' sopra è più rilevante.
+    }
+
+    contactTriggerButton.addEventListener('click', (event) => {
+      event.preventDefault(); // Prevent default anchor behavior
+      
+      // Alterna la classe 'hidden'
+      contactOptions.classList.toggle('hidden');
+
+      // Imposta esplicitamente lo stile display basandoti sulla presenza della classe 'hidden'
+      if (contactOptions.classList.contains('hidden')) {
+        contactOptions.style.display = 'none';
+      } else {
+        // Rimuovi lo stile display inline per permettere alle classi Tailwind (es. md:flex) di funzionare
+        contactOptions.style.display = ''; 
+      }
+    });
+  }
+
 }); 
